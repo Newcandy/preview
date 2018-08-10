@@ -26,6 +26,7 @@
       var pageLandPageId = "mtun"
       var u = navigator.userAgent
       var ua = navigator.userAgent.toLowerCase()
+      window.alert(u)
 
       if(pageMLink && /Android|webOS|iPhone|iPod|BlackBerry/i.test(u)) {
         if (!pageLandPageId) {
@@ -40,7 +41,7 @@
               !(ua.match(/QQ/i) == 'qq' && !(u.indexOf('MQQBrowser') > -1)) &&
               !u.match('Macintosh')) {
               location.href = 'openApp.jdMobile://virtual?params={"category":"jump","des":"getCoupon","action":"to","url":" + encodeURIComponent(pageMLink) + ","landPageId":" + pageLandPageId + "}'
-              location.href = pageMLink
+              // location.href = pageMLink
           }
         }
       }
