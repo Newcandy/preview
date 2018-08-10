@@ -26,23 +26,27 @@
       var pageLandPageId = "mtun"
       var u = navigator.userAgent
       var ua = navigator.userAgent.toLowerCase()
-      window.alert(u)
 
       if(pageMLink && /Android|webOS|iPhone|iPod|BlackBerry/i.test(u)) {
+        console.log(1)
         if (!pageLandPageId) {
+          console.log(2)
           var nowLink = location.pathname === '/' ?
               location.host : location.host + location.pathname
           if (pageMLink.indexOf(nowLink) === -1) {
               location.href = pageMLink
           }
         } else {
+          console.log(2.1)
           if (ua.indexOf('wechat') === -1 &&
               ua.indexOf('jdapp') === -1 &&
               !(ua.match(/QQ/i) == 'qq' && !(u.indexOf('MQQBrowser') > -1)) &&
               !u.match('Macintosh')) {
+              console.log(3)
               location.href = 'openApp.jdMobile://virtual?params={"category":"jump","des":"getCoupon","action":"to","url":" + encodeURIComponent(pageMLink) + ","landPageId":" + pageLandPageId + "}'
-              // location.href = pageMLink
           }
+          console.log(2.2)
+          location.href = pageMLink
         }
       }
     </script>
